@@ -1,73 +1,79 @@
-# React + TypeScript + Vite
+# 📚 Book Catalog Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação moderna de gerenciamento de biblioteca pessoal, desenvolvida para demonstrar proficiência em **React**, **TypeScript** e integração com **APIs REST**.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este projeto utiliza as ferramentas mais atuais do ecossistema Frontend:
 
-## React Compiler
+* **React 18** (Vite como Build Tool)
+* **TypeScript** (Tipagem estrita e interfaces)
+* **Tailwind CSS v4** (Estilização via CSS-first engine)
+* **Axios** (Consumo de API e interceptação de dados)
+* **Lucide React** (Ícones)
+* **CrudCrud API** (Persistência de dados em nuvem)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Funcionalidades
 
-## Expanding the ESLint configuration
+* **CRUD Completo:** Listagem, Criação, Edição de status e Exclusão de livros.
+* **Dashboard de Estatísticas:** Cálculo em tempo real de livros lidos e pendentes utilizando o método `.reduce()`.
+* **Filtro Inteligente:** Busca dinâmica por título ou autor através de estado computado.
+* **Interface Responsiva:** Design otimizado para dispositivos móveis e desktop.
+* **Persistência:** Sincronização automática com banco de dados remoto.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Instalação e Execução
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone o repositório:**
+```bash
+git clone https://github.com/Li-code1/meu-catalogo-livros.git
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Instale as dependências:**
+```bash
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+
+
+3. **Configure a API:**
+* Acesse [crudcrud.com](https://crudcrud.com).
+* Copie sua URL única.
+* No arquivo `src/App.tsx`, substitua a constante `API_URL` pela sua URL.
+
+
+4. **Inicie o servidor de desenvolvimento:**
+```bash
+npm run dev
+
+```
+
+
+
+## 🏗️ Estrutura de Arquivos
+
+```text
+src/
+ ├── components/       # Componentes reutilizáveis (Form, List, Stats)
+ ├── types.ts          # Definições de interfaces TypeScript
+ ├── App.tsx           # Lógica principal e gerenciamento de estado
+ ├── main.tsx          # Ponto de entrada da aplicação
+ └── index.css         # Configuração Tailwind v4
+
+```
+
+## 🧠 Conceitos Aplicados
+
+* **State Lifting:** Elevação de estado para o componente pai para sincronizar componentes irmãos.
+* **Type-Only Imports:** Uso de `import type` para otimização de bundle conforme as regras de sintaxe modernas do TS.
+* **Imutabilidade:** Manipulação de arrays e objetos utilizando `map`, `filter` e `spread operator` para garantir ciclos de renderização corretos no React.
+* **Async/Await:** Tratamento de promessas e erros em requisições assíncronas.
+
+---
+
+### 📝 Licença
+
+Este projeto foi desenvolvido para fins de estudo e prática. Sinta-se à vontade para clonar e evoluir!
+
+---
