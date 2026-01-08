@@ -68,7 +68,7 @@ src/
 * **State Lifting:** Elevação de estado para o componente pai para sincronizar componentes irmãos.
 * **Type-Only Imports:** Uso de `import type` para otimização de bundle conforme as regras de sintaxe modernas do TS.
 * **Imutabilidade:** Manipulação de arrays e objetos utilizando `map`, `filter` e `spread operator` para garantir ciclos de renderização corretos no React.
-* **Async/Await:** Tratamento de promessas e erros em requisições assíncronas.
+* **Async/Await:** Tratamento de promessas e erros em requisições assíncronas. O projeto utiliza Axios para integração com a API CrudCrud. Para contornar a expiração de 24h da API, implementei uma estratégia de Persistence Fallback com LocalStorage, garantindo que a aplicação permaneça 100% funcional mesmo em caso de falha na comunicação com o servidor externo.
 
 ---
 
